@@ -1,0 +1,110 @@
+body {
+	color: #666;
+	-webkit-font-smoothing: antialiased;
+	margin: auto;
+	vertical-align: middle;
+}
+
+#buttonContainer {
+	margin: auto;
+	width: 58rem;
+	padding-top: 4rem;
+
+}
+
+#buttons {
+	margin: auto;
+	width: 58rem;
+}
+
+.divider {
+	margin: auto;
+	width: 60rem;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+ .expandable {
+ 	margin: auto;
+	width: 60rem;
+
+    overflow: hidden;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s;
+
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+.expandable p {
+	font-size: 25px;
+}
+
+ .HButton{
+ 	width: 15rem;
+ }
+
+ .HButton {
+	background-color: #424242;
+	-webkit-border-radius: 1px;
+	border-radius: 3px;
+	border: 1px solid #222222;
+	text-transform: capitalize;
+	font-family: 'trade-condensed', sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+	padding-top: 30px; padding-left: 10px; padding-right: 10px; padding-bottom: 30px;
+	text-align: center;
+}
+
+.HButton:active {
+	box-shadow: 2px 2px 10px 1px #F87620;
+	
+}
+
+hr {
+	border-color: #818A8A;
+}
+
+html {
+	font-size: 12px;
+	background: #171919;
+}
+
+input {
+    border: 5px solid #424242; 
+    width: 40rem;
+    padding: 20px;
+    background: #666;
+    margin: 0 0 8px 0;
+    color: #000000;
+    font-size: 20px;
+    font-family: 'trade-condensed', sans-serif;
+}
+
+#logo {
+	width: 30rem;
+}
+
+#logoContainer {
+	padding: 2rem;
+	width: 30rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 12rem;
+	padding-bottom: 4rem;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-family: 'trade-condensed', sans-serif;
+	color: #B3B3B3;
+}
+
+td {
+	padding-right: 6rem;
+}
