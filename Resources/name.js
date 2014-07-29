@@ -1,14 +1,13 @@
 function getName() {
-	if (event.keyCode==13) {
-		var name = document.getElementById("name").value;
+    if (event.keyCode == 13) {
+        var name = document.getElementById("name").value;
 
-		$('#name').blur();
+        $('#name').blur();
 
-		//alert(name);
-	}
-	else {
-		setTimeout(function() {
-			$('#name').blur();
-		}, 20000);
-	}
+        //alert(name);
+    } else {
+        setTimeout(function() {
+            $('#name').blur();
+        }, 20000);
+    }
 }
