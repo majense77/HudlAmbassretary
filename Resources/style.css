@@ -86,6 +86,10 @@ input {
 	color: #000000;
 	font-size: 20px;
 	font-family: 'trade-condensed', sans-serif;
+	background-image: none;
+	background-size: 40px;
+	background-repeat: no-repeat;
+	background-position: 35rem 1rem;
 }
 #logo {
 	width: 30rem;

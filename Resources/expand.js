@@ -42,9 +42,10 @@ function toggleHeight(e, maxHeight) {
 
             enableButtons();
             removeSelected(id);
+            destroyCheck();
             document.getElementById("name").value = "";
 
-        }, 30000)
+        }, 30000);
     } else {
         setTimeout(function() {
             if (e.style.height != '0px') {
@@ -58,7 +59,7 @@ function toggleHeight(e, maxHeight) {
             enableButtons();
             removeSelected(id);
 
-        }, 10000)
+        }, 10000);
     }
 }
 
@@ -66,14 +67,14 @@ function disableButtons() {
     var list = document.getElementsByClassName("HButton");
     for (var i = 0; i < list.length; i++) {
         list[i].disabled = true;
-    };
+    }
 }
 
 function enableButtons() {
     var list = document.getElementsByClassName("HButton");
     for (var i = 0; i < list.length; i++) {
         list[i].disabled = false;
-    };
+    }
 }
 
 function addSelected(id) {
@@ -86,7 +87,7 @@ function addSelected(id) {
     for (var i = 0; i < others.length; i++) {
         var oel = document.getElementById(others[i]);
         oel.style.opacity = '0.5';
-    };
+    }
 }
 
 function removeSelected(id) {
@@ -98,7 +99,7 @@ function removeSelected(id) {
     for (var i = 0; i < others.length; i++) {
         var oel = document.getElementById(others[i]);
         oel.style.opacity = '1';
-    };
+    }
 }
 
 function getOthers(id) {
@@ -112,4 +113,28 @@ function getOthers(id) {
     }
 
     return others;
+}
+
+function getName() {
+    if (event.keyCode == 13) {
+        var name = document.getElementById("name").value;
+
+        $('#name').blur();
+
+        displayCheck();
+    } else {
+        setTimeout(function() {
+            $('#name').blur();
+        }, 20000);
+    }
+}
+
+function displayCheck() {
+    $('#name').css('backgroundImage', 'url("/Users/Mike/Github/HudlAmbassretary/Resources/check.png")');
+    console.log("displayCheck");
+}
+
+function destroyCheck() {
+    $('#name').css('backgroundImage', 'none');
+    console.log('destroyCheck');
 }
