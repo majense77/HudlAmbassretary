@@ -130,7 +130,7 @@ function getName() {
 }
 
 function displayCheck() {
-    $('#name').css('backgroundImage', 'url("/check.png")');
+    $('#name').css('backgroundImage', 'url("check.png")');
     console.log("displayCheck");
 }
 
