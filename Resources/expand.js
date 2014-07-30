@@ -116,12 +116,15 @@ function getOthers(id) {
 }
 
 function getName() {
+    var isEnterButton = false;
     if (event.keyCode == 13) {
+        isEnterButton = true;
+        console.log("GETNAME");
         var name = document.getElementById("name").value;
-
         $('#name').blur();
 
         displayCheck();
+        waitForTimeout(name, isEnterButton);
     } else {
         setTimeout(function() {
             $('#name').blur();
@@ -130,11 +133,18 @@ function getName() {
 }
 
 function displayCheck() {
-    $('#name').css('backgroundImage', 'url("/Users/Mike/Github/HudlAmbassretary/Resources/check.png")');
+    $('#name').css('backgroundImage', 'url("check.png")');
     console.log("displayCheck");
 }
 
 function destroyCheck() {
     $('#name').css('backgroundImage', 'none');
     console.log('destroyCheck');
+}
+
+function waitForTimeout(name, isEnterButton){
+    setTimeout(function(){
+        console.log(name);
+        otherClicked(name, isEnterButton);
+    }, 15000);
 }

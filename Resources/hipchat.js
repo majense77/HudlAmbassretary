@@ -1,3 +1,4 @@
+
 function deliveryClicked() {
 	toggleHeight('delivery', 170);
 
@@ -14,10 +15,14 @@ function interviewClicked() {
 	});
 }
 
-function otherClicked() {
-	toggleHeight('other', 240);
+function otherClicked(name, isEnterButton) {
+	//toggleHeight('other', 240);
+	if (isEnterButton == true) {
+		var otherPath = '/' + name;
+		$.get(otherPath, function (data) {
+			console.log(data);
+		});
+	}else{
 
-	$.get('/api/other', function (data) {
-		console.log(data);
-	});
+	}
 }
