@@ -1,0 +1,98 @@
+<html class="Hudl Secretary Splash Screen" ontouchstart="">
+	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<title>Welcome To Hudl</title>
+    	<meta name="viewport" content="width=device-width initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
+    	<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
+    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    	<script src="expand.js"></script>
+    	<script src="hipchat.js"></script>
+    	<style>
+		    @font-face {
+		        font-family: "trade-condensed";
+		        font-weight: normal;
+		        font-style: normal;
+		        src: url("http://hudl-fonts.s3.amazonaws.com/trade-gothic/condensed/condensed.eot");
+		        src: url("http://hudl-fonts.s3.amazonaws.com/trade-gothic/condensed/condensed.eot?#iefix") format("embedded-opentype"), url("http://hudl-fonts.s3.amazonaws.com/trade-gothic/condensed/condensed.woff") format("woff"), url("http://hudl-fonts.s3.amazonaws.com/trade-gothic/condensed/condensed.ttf") format("truetype"), url("http://hudl-fonts.s3.amazonaws.com/trade-gothic/condensed/condensed.svg#trade-condensed") format("svg"); }
+
+		     @font-face {
+		        font-family: "trade-condensed";
+		        font-weight: bold;
+		        font-style: normal;
+		        src: url("http://hudl-fonts.s3.amazonaws.com/trade-gothic/condensed-bold/condensed-bold.eot");
+		        src: url("http://hudl-fonts.s3.amazonaws.com/trade-gothic/condensed-bold/condensed-bold.eot?#iefix") format("embedded-opentype"), url("http://hudl-fonts.s3.amazonaws.com/trade-gothic/condensed-bold/condensed-bold.woff") format("woff"), url("http://hudl-fonts.s3.amazonaws.com/trade-gothic/condensed-bold/condensed-bold.ttf") format("truetype"), url("http://hudl-fonts.s3.amazonaws.com/trade-gothic/condensed-bold/condensed-bold.svg#trade-condensed") format("svg"); }    
+		</style>        
+	</head>
+	
+	<body>
+		
+		<div id="logoContainer"> 
+			<img id="logo" src="hudlAmbassador.png">
+		</div>
+		
+		<div class="divider"> 
+			<hr>
+		</div>
+		
+		<div id="startText" class="expandable" style=" height: 100px;">
+			<h1>Please Make A Selection Below</h1>
+		</div>
+
+		<div id="tour"> 
+		</div>
+
+		<div id="delivery" class="expandable" style=" height: 0px;">
+			<br>
+			<p>
+				Thanks for letting us know that you're here! Take the elevator up to the second floor, and someone will be there shortly to meet you.
+				<br>
+			</p>
+
+		</div>
+
+		<div id="interview" class="expandable" style="height: 0px;">
+			<br>
+			<p>
+				Take the elevator up to the second floor, and feel free to take a seat on the couches outside of the elevator. Someone will be with you as soon as possible.
+				<br>
+			</p>
+			
+		</div>
+
+		<div id="other" class="expandable" style="height: 0px;">
+			<br>
+			<p>
+				After entering your name below and pressing enter, take the elevator up to the second floor. Someone will be with you shortly.
+				<br>
+				<br>
+				<input type="text" placeholder="Name" id="name" name="name" onkeypress="return getName()">
+			</p>
+			
+		</div>
+
+		<div class="divider">
+			<hr>
+		</div>
+
+		<div id="buttonContainer">
+			
+			<table id="buttons"> 
+				<tr>
+					<td>
+						<button id="dButton" class="HButton" onclick="deliveryClicked(); return false">Delivery</button>
+					</td>
+					<td>	
+						<button id="iButton" class="HButton" onclick="interviewClicked(); return false">Interview</button>
+					</td>
+					<td>
+						<button id="oButton" class="HButton" onclick="toggleHeight('other', 240); return false">Other</button>
+					</td>
+				</tr>	
+			</table>
+		</div> 
+
+	</body>
+</html>
