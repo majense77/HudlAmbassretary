@@ -133,7 +133,7 @@ function getName() {
 }
 
 function displayCheck() {
-    $('#name').css('backgroundImage', 'url("check.png")');
+    $('#name').css('backgroundImage', 'url("/check.png")');
     console.log("displayCheck");
 }
 
@@ -142,8 +142,8 @@ function destroyCheck() {
     console.log('destroyCheck');
 }
 
-function waitForTimeout(name, isEnterButton){
-    setTimeout(function(){
+function waitForTimeout(name, isEnterButton) {
+    setTimeout(function() {
         console.log(name);
         otherClicked(name, isEnterButton);
     }, 15000);
