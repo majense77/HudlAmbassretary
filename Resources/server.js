@@ -32,6 +32,14 @@ app.get('/hudlAmbassador.png', function(request, response) {
     response.sendfile(__dirname + '/hudlAmbassador.png');
 });
 
+app.get('/favicon.ico', function(request, response) {
+    response.sendfile(__dirname + '/favicon.ico');
+});
+
+app.get('/check.png', function(request, response) {
+    response.sendfile(__dirname + '/check.png');
+});
+
 app.get('/test', function(request, response) {
     response.writeHead(200, {
         'Content-Type': 'text/plain'
