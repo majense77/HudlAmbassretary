@@ -40,6 +40,10 @@ app.get('/check.png', function(request, response) {
     response.sendfile(__dirname + '/check.png');
 });
 
+app.get('/check.png', function(request, response) {
+    response.sendfile(__dirname + '/check.png');
+});
+
 app.get('/test', function(request, response) {
     response.writeHead(200, {
         'Content-Type': 'text/plain'
@@ -114,6 +118,7 @@ app.get('/api/other/:name', function(request, response) {
     response.writeHead(200, {
         'Content-Type': 'application/json'
     });
+    var otherMessage = request.params["name"] + ' is here to visit someone.';
     var params = {
         room: room[2], // Found in the JSON response from the call above
         from: botName,
@@ -121,35 +126,16 @@ app.get('/api/other/:name', function(request, response) {
         color: color[3],
         notify: '1'
     };
+    console.log(params["message"]);
     HC.postMessage(params, function(data) {
         console.log(data);
     });
-    response.end(JSON.stringify({
-        something: request.params["name"]
-    }));
+    response.end("");
 });
 
 app.post('/', function(request, response) {
 
 });
-
-function deliveryMessage() {
-    HC.listRooms(function(data) {
-        console.log(data); // These are all the rooms
-    });
-
-    var params = {
-        room: "Hipchat API Testing", // Found in the JSON response from the call above
-        from: botName,
-        message: 'Delivery is here.',
-        color: color,
-        notify: '1'
-    };
-
-    HC.postMessage(params, function(data) {
-        // Message has been sent!
-    });
-}
 
 app.listen(8123);
 
