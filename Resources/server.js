@@ -86,7 +86,7 @@ app.get('/api/interview', function(request, response) {
     var params = {
         room: room[1], // Found in the JSON response from the call above
         from: botName,
-        message: 'Your next interviewee is here!',
+        message: 'Your next interview candidate is here!',
         color: color[3],
         notify: '1'
     };
