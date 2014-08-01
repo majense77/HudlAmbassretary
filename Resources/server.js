@@ -44,6 +44,10 @@ app.get('/check.png', function(request, response) {
     response.sendfile(__dirname + '/check.png');
 });
 
+app.get('/x.png', function(request, response) {
+    response.sendfile(__dirname + '/x.png');
+});
+
 app.get('/test', function(request, response) {
     response.writeHead(200, {
         'Content-Type': 'text/plain'
@@ -122,7 +126,7 @@ app.get('/api/other/:name', function(request, response) {
     var params = {
         room: room[2], // Found in the JSON response from the call above
         from: botName,
-        message: response.params["name"] + ' is here to visit someone.',
+        message: otherMessage,
         color: color[3],
         notify: '1'
     };

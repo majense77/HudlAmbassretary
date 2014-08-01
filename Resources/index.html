@@ -48,8 +48,11 @@
 			<br>
 			<p>
 				Thanks for letting us know that you're here! Take the elevator up to the second floor, and someone will be there shortly to meet you.
-				<br>
 			</p>
+
+			<!-- <div onclick="closeTab('other')">
+				<img class="x" src="x.png"></img>
+			</div>	-->
 
 		</div>
 
@@ -57,20 +60,25 @@
 			<br>
 			<p>
 				Take the elevator up to the second floor, and feel free to take a seat on the couches outside of the elevator. Someone will be with you as soon as possible.
-				<br>
 			</p>
 			
+			<!-- <div onclick="closeTab('other')">
+				<img class="x" src="x.png"></img>
+			</div> -->	
 		</div>
 
 		<div id="other" class="expandable" style="height: 0px;">
-			<br>
-			<p>
+			<p class="otherP">
 				After entering your name below and pressing enter, take the elevator up to the second floor. Someone will be with you shortly.
-				<br>
-				<br>
+			</p>
+			<p class="otherP">
 				<input type="text" placeholder="Name" id="name" name="name" onkeypress="return getName()">
 			</p>
-			
+
+			<!-- <div onclick="closeTab('other')">
+				<img class="x" src="x.png"></img>
+			</div> -->
+
 		</div>
 
 		<div class="divider">
@@ -88,7 +96,7 @@
 						<button id="iButton" class="HButton" onclick="interviewClicked(); return false">Interview</button>
 					</td>
 					<td>
-						<button id="oButton" class="HButton" onclick="toggleHeight('other', 240); return false">Other</button>
+						<button id="oButton" class="HButton" onclick="toggleHeight('other', 260); return false">Other</button>
 					</td>
 				</tr>	
 			</table>

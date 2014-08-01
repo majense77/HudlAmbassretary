@@ -19,27 +19,19 @@ function toggleHeight(e, maxHeight) {
 
     var o = document.getElementById("startText");
 
-    if (e.style.height != '0px') {
-        e.style.height = '0px';
-        o.style.height = '100px';
-    } else {
-        e.style.height = maxHeight + 'px';
-        o.style.height = '0px';
-    }
+    e.style.height = maxHeight + 'px';
+    o.style.height = '0px';
 
     disableButtons();
     addSelected(id);
 
     if (other) {
         setTimeout(function() {
-            if (e.style.height != '0px') {
-                e.style.height = '0px';
-                o.style.height = '100px';
-            } else {
-                e.style.height = maxHeight + 'px';
-                o.style.height = '0px';
-            }
 
+            e.style.height = '0px';
+            o.style.height = '100px';
+
+            $('#name').blur();
             enableButtons();
             removeSelected(id);
             destroyCheck();
@@ -48,13 +40,9 @@ function toggleHeight(e, maxHeight) {
         }, 30000);
     } else {
         setTimeout(function() {
-            if (e.style.height != '0px') {
-                e.style.height = '0px';
-                o.style.height = '100px';
-            } else {
-                e.style.height = maxHeight + 'px';
-                o.style.height = '0px';
-            }
+
+            e.style.height = '0px';
+            o.style.height = '100px';
 
             enableButtons();
             removeSelected(id);
@@ -125,10 +113,6 @@ function getName() {
 
         displayCheck();
         waitForTimeout(name, isEnterButton);
-    } else {
-        setTimeout(function() {
-            $('#name').blur();
-        }, 20000);
     }
 }
 
@@ -143,8 +127,51 @@ function destroyCheck() {
 }
 
 function waitForTimeout(name, isEnterButton) {
-    setTimeout(function() {
-        console.log(name);
-        otherClicked(name, isEnterButton);
-    }, 15000);
+    console.log(name);
+    otherClicked(name, isEnterButton);
+}
+
+function closeTab(e) {
+    var other;
+    var id;
+    var o = document.getElementById("startText");
+
+    if (e === "delivery") {
+        e = document.getElementById("delivery");
+        id = "dButton";
+        other = false;
+    } else if (e === "interview") {
+        e = document.getElementById("interview");
+        id = "iButton";
+        other = false;
+    } else {
+        e = document.getElementById("other");
+        id = "oButton";
+        other = true;
+    }
+
+    if (other) {
+        setTimeout(function() {
+
+            e.style.height = '0px';
+            o.style.height = '100px';
+
+            $('#name').blur();
+            enableButtons();
+            removeSelected(id);
+            destroyCheck();
+            document.getElementById("name").value = "";
+
+        }, 30000);
+    } else {
+        setTimeout(function() {
+
+            e.style.height = '0px';
+            o.style.height = '100px';
+
+            enableButtons();
+            removeSelected(id);
+
+        }, 10000);
+    }
 }
