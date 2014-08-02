@@ -131,47 +131,43 @@ function waitForTimeout(name, isEnterButton) {
     otherClicked(name, isEnterButton);
 }
 
-function closeTab(e) {
-    var other;
-    var id;
-    var o = document.getElementById("startText");
+$(document).ready(function() {
+    $("#dx").click(function() {
+        var id = "dButton";
+        var o = document.getElementById("startText");
+        var e = document.getElementById("delivery");
 
-    if (e === "delivery") {
-        e = document.getElementById("delivery");
-        id = "dButton";
-        other = false;
-    } else if (e === "interview") {
-        e = document.getElementById("interview");
-        id = "iButton";
-        other = false;
-    } else {
-        e = document.getElementById("other");
-        id = "oButton";
-        other = true;
-    }
+        e.style.height = '0px';
+        o.style.height = '100px';
 
-    if (other) {
-        setTimeout(function() {
+        enableButtons();
+        removeSelected(id);
+    });
 
-            e.style.height = '0px';
-            o.style.height = '100px';
+    $("#ix").click(function() {
+        var id = "iButton";
+        var o = document.getElementById("startText");
+        var e = document.getElementById("interview");
 
-            $('#name').blur();
-            enableButtons();
-            removeSelected(id);
-            destroyCheck();
-            document.getElementById("name").value = "";
+        e.style.height = '0px';
+        o.style.height = '100px';
 
-        }, 30000);
-    } else {
-        setTimeout(function() {
+        enableButtons();
+        removeSelected(id);
+    });
 
-            e.style.height = '0px';
-            o.style.height = '100px';
+    $("#ox").click(function() {
+        var id = "oButton";
+        var o = document.getElementById("startText");
+        var e = document.getElementById("other");
 
-            enableButtons();
-            removeSelected(id);
+        e.style.height = '0px';
+        o.style.height = '100px';
 
-        }, 10000);
-    }
-}
+        $('#name').blur();
+        enableButtons();
+        removeSelected(id);
+        destroyCheck();
+        document.getElementById("name").value = "";
+    });
+});
