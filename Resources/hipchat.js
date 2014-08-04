@@ -1,5 +1,5 @@
 function deliveryClicked() {
-    toggleHeight('delivery', 190);
+    toggleHeight('delivery', 200);
 
     $.get('/api/delivery', function(data) {
         console.log(data);
@@ -7,7 +7,7 @@ function deliveryClicked() {
 }
 
 function interviewClicked() {
-    toggleHeight('interview', 190);
+    toggleHeight('interview', 200);
 
     $.get('/api/interview', function(data) {
         console.log(data);
