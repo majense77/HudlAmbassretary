@@ -2,7 +2,7 @@ var express = require('express');
 var hipchat = require('node-hipchat');
 
 var app = express();
-var HC = new hipchat('075c106de837269ea0177388ba1c04');
+var HC = new hipchat('9e205d31373fc26a7238e925c5d97e');
 
 var botName = 'PepperBotts';
 var color = ['green', 'red', 'yellow', 'purple', 'grey', 'random'];
@@ -66,7 +66,7 @@ app.get('/api/people', function(request, response) {
     response.writeHead(200, {
         'Content-Type': 'application/json'
     });
-    hipchatter.users(function(err, res) {
+    HC.users(function(err, res) {
         if (err) {
             response.end("Failed");
             throw err;
